@@ -1,4 +1,4 @@
-# WORDPRESS + MySQL + PhpMyAdmin docker compose demo CI/CD pipeline
+# Bookstack with CI/CD on Elestio
 
 
 <a href="https://dash.elest.io/deploy?source=cicd&social=dockerCompose&url=https://github.com/elestio-examples/bookstack"><img src="deploy-on-elestio.png" alt="Deploy on Elest.io" width="180px" /></a>
