@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  bookstack:
+    image: linuxserver/bookstack:${SOFTWARE_VERSION_TAG}
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - APP_URL=https://[CI_CD_DOMAIN]
+      - DB_HOST=bookstack_db
+      - DB_USER=${MYSQL_USER}
+      - DB_PASS=${MYSQL_PASSWORD}
+      - DB_DATABASE=bookstackapp
+      - MAIL_DRIVER=smtp
+      - MAIL_FROM_NAME="BookStack"
+      - MAIL_FROM=[DOMAIN]@vm.elestio.app
+      - MAIL_HOST=172.17.0.1
+      - MAIL_PORT=25
+    volumes:
+      - ./web:/config
+    ports:
+      - '172.17.0.1:6875:80'
+    restart: always
+    depends_on:
+      - bookstack_db
+  bookstack_db:
+    image: linuxserver/mariadb
+    environment:
+      - PUID=1001
+      - PGID=1001
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=bookstackapp
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - /opt/app/BookStack/mariadb:/config
+    restart: always
