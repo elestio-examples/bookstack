@@ -2,7 +2,7 @@
 set -o allexport; source .env; set +o allexport;
 
 echo "Waiting for bookstack to be ready ...";
-sleep 20s;
+sleep 10s;
 
 #Create admin user
 docker-compose exec -T bookstack_db mysql -u root -p${MYSQL_ROOT_PASSWORD} bookstackapp -e "DELETE FROM users WHERE id='1';"
