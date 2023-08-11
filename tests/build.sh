@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-chmod +x entrypoint.app.sh
-chmod +x entrypoint.node.sh
+cp -rf /dev/docker/* ./
 
 docker buildx build . --output type=docker,name=elestio4test/bookstack:latest | docker load

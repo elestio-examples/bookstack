@@ -12,11 +12,11 @@ A better community platform for the modern web.
 
 [bookstack](https://www.bookstackapp.com/) is a simple, self-hosted, easy-to-use platform for organising and storing information.
 
-<img src="https://github.com/elestio-examples/bookstack/blob/master/bookstack.png" alt="bookstack" width="800">
+<img src="https://github.com/elestio-examples/bookstack/raw/master/bookstack.png" alt="bookstack" width="800">
 
 Deploy a <a target="_blank" href="https://elest.io/open-source/bookstack">fully managed bookstack</a> on <a target="_blank" href="https://elest.io/">elest.io</a> to create a structured knowledge store for personal, team, or company use. BookStack focuses on ease-of-use and design to provide an experience suitable for an audience with, potentially, mixed skills in technology.
 
-[![deploy](https://github.com/elestio-examples/bookstack/blob/master/deploy-on-elestio.png)](https://dash.elest.io/deploy?source=cicd&social=dockerCompose&url=https://github.com/elestio-examples/bookstack)
+[![deploy](https://github.com/elestio-examples/bookstack/raw/master/deploy-on-elestio.png)](https://dash.elest.io/deploy?source=cicd&social=dockerCompose&url=https://github.com/elestio-examples/bookstack)
 
 # Why use Elestio images?
 

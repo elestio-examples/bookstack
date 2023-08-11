@@ -13,12 +13,12 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: "true"
     command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - ./init.db:/docker-entrypoint-initdb.d
+      - ./dev/docker/init.db:/docker-entrypoint-initdb.d
       - db:/var/lib/mysql
   app:
     # build:
     #   context: .
-    #   dockerfile: ./Dockerfile
+    #   dockerfile: ./dev/docker/Dockerfile
     image: elestio4test/bookstack:latest
     environment:
       APP_URL: http://localhost:${DEV_PORT:-8080}
@@ -36,8 +36,8 @@ services:
       - ${DEV_PORT:-8080}:80
     volumes:
       - ./:/app
-      - ./php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
-    entrypoint: /entrypoint.app.sh
+      - ./dev/docker/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    entrypoint: /app/dev/docker/entrypoint.app.sh
     extra_hosts:
       - "host.docker.internal:host-gateway"
   node:
@@ -46,7 +46,7 @@ services:
     user: node
     volumes:
       - ./:/app
-    entrypoint: /entrypoint.node.sh
+    entrypoint: /app/dev/docker/entrypoint.node.sh
   mailhog:
     image: mailhog/mailhog
     ports:
