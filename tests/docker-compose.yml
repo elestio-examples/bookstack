@@ -5,14 +5,14 @@ services:
     environment:
       - PUID=1001
       - PGID=1001
-      - APP_URL=https://your.site
+      - APP_URL=${DOMAIN}
       - DB_HOST=bookstack_db
       - DB_USER=${MYSQL_USER}
       - DB_PASS=${MYSQL_PASSWORD}
       - DB_DATABASE=bookstackapp
       - MAIL_DRIVER=smtp
       - MAIL_FROM_NAME="BookStack"
-      - MAIL_FROM=your.site@vm.elestio.app
+      - MAIL_FROM=${DOMAIN}@vm.elestio.app
       - MAIL_HOST=172.17.0.1
       - MAIL_PORT=25
     volumes:
