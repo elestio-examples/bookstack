@@ -22,6 +22,10 @@ environments:
     value: "bookstack"
   - key: "MYSQL_PASSWORD"
     value: "random_password"
+  - key: "DOMAIN"
+    value: "[DOMAIN]"
+  - key: "APP_URL"
+    value: "https://[CI_CD_DOMAIN]"
 config:
   runTime: "dockerCompose"
   version: ""
