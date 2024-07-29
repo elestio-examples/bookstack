@@ -12,7 +12,7 @@ services:
       - DB_DATABASE=bookstackapp
       - MAIL_DRIVER=smtp
       - MAIL_FROM_NAME="BookStack"
-      - MAIL_FROM=[DOMAIN]@vm.elestio.app
+      - MAIL_FROM=${MAIL_FROM}
       - MAIL_HOST=172.17.0.1
       - MAIL_PORT=25
       - MAIL_ENCRYPTION=null
