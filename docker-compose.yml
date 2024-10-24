@@ -6,9 +6,10 @@ services:
       - PUID=1001
       - PGID=1001
       - APP_URL=${APP_URL}
-      - DB_HOST=bookstack_db
-      - DB_USER=${MYSQL_USER}
-      - DB_PASS=${MYSQL_PASSWORD}
+      - APP_KEY=${APP_KEY}
+      - DB_HOST=db
+      - DB_USERNAME=${MYSQL_USER}
+      - DB_PASSWORD=${MYSQL_PASSWORD}
       - DB_DATABASE=bookstackapp
       - MAIL_DRIVER=smtp
       - MAIL_FROM_NAME="BookStack"
@@ -23,8 +24,8 @@ services:
       - '172.17.0.1:6875:80'
     restart: always
     depends_on:
-      - bookstack_db
-  bookstack_db:
+      - db
+  db:
     image: linuxserver/mariadb
     environment:
       - PUID=1001
