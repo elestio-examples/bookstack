@@ -11,6 +11,7 @@ chown -R 1001:1001 ./init.db
 chown -R 1001:1001 ./db
 chown -R 1001:1001 ./php/conf.d/xdebug.ini
 
+docker-compose pull;
 APP_KEY=$(docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/bookstack:latest appkey | sed 's/\x1b\[[0-9;]*m//g' | tr -d '\r\n')
 
 cat << EOT >> ./.env
